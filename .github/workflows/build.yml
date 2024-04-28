@@ -29,7 +29,7 @@ jobs:
     env:
       libraryName: llama.cpp
       cmakeInstallationPath: llama.cpp-installation
-      tagName: b1509
+      tagName: b2751
     steps:
     
       - uses: actions/checkout@v4
@@ -106,7 +106,7 @@ jobs:
             set CD_LINUX=%CD:\=/%
             gcc --version &&^
             cd ${{ env.libraryName }} &&^
-            cmake.exe -G"MinGW Makefiles" ^
+            cmake.exe -LH -G"MinGW Makefiles" ^
             -DCMAKE_BUILD_TYPE=Release ^
             -DBUILD_SHARED_LIBS=OFF ^
             -DCMAKE_EXE_LINKER_FLAGS="-static" ^
